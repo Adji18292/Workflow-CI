@@ -19,8 +19,9 @@ jobs:
         with:
           python-version: '3.12.7'
 
-      - name: Install MLflow
-        run: pip install mlflow==2.19.0
+      - name: Install MLflow and Dependencies
+        run: |
+          pip install mlflow==2.19.0 tensorflow==2.19.0 matplotlib
 
       - name: Run MLflow Project
         env:
@@ -28,4 +29,4 @@ jobs:
           MLFLOW_TRACKING_PASSWORD: ${{ secrets.DAGSHUB_TOKEN }}
         run: |
           cd MLProject_Folder
-          mlflow run .
+          mlflow run . --env-manager=local

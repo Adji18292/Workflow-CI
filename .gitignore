@@ -1,0 +1,6 @@
+mlruns/
+model/
+my_docker_build/
+__pycache__/
+*.pyc
+MLProject_Folder/fruits_preprocessing/

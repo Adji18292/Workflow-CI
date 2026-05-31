@@ -35,14 +35,9 @@ model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-# Training cepat (1 epoch) karena ini hanya untuk validasi CI workflow
-history = model.fit(train_dataset, validation_data=val_dataset, epochs=1)
+mlflow.keras.autolog()
 
-# Mencatat metrik (mlflow run sudah memulai run secara otomatis, jadi bisa langsung log)
-mlflow.log_metric("accuracy", history.history['accuracy'][-1])
-mlflow.log_metric("loss", history.history['loss'][-1])
-
-# Menyimpan model secara lokal agar bisa dijadikan artefak dan docker image
+model.fit(train_dataset, validation_data=val_dataset, epochs=1)
 model_dir = "my_model_dir"
 if os.path.exists(model_dir):
     shutil.rmtree(model_dir)

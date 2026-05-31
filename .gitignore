@@ -3,5 +3,3 @@ model/
 my_docker_build/
 __pycache__/
 *.pyc
-MLProject/fruits_preprocessing/
-MLProject_Folder/fruits_preprocessing/

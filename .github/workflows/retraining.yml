@@ -48,5 +48,5 @@ jobs:
       - name: Build and Push Docker Image using MLflow
         run: |
           cd MLProject
-          mlflow models build-docker -m my_model_dir -n ${{ secrets.DOCKER_USERNAME }}/msml-fruits-model:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/msml-fruits-model:latest
+          mlflow models build-docker -m my_model_dir -n adji1112/msml-fruits-model:latest
+          docker push adji1112/msml-fruits-model:latest

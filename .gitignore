@@ -3,3 +3,5 @@ model/
 my_docker_build/
 __pycache__/
 *.pyc
+*.snapshot
+*.shard/

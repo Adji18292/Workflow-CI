@@ -48,5 +48,5 @@ jobs:
       - name: Build and Push Docker Image using MLflow
         run: |
           cd MLProject
-          mlflow models build-docker -m my_model_dir -n adji1112/msml-fruits-model:latest --env-manager conda
+          mlflow models build-docker -m my_model_dir -n adji1112/msml-fruits-model:latest --env-manager local
           docker push adji1112/msml-fruits-model:latest

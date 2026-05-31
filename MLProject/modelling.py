@@ -9,10 +9,6 @@ import shutil
 if sys.stdout.encoding != 'utf-8':
     sys.stdout.reconfigure(encoding='utf-8')
 
-if "MLFLOW_TRACKING_USERNAME" in os.environ:
-    TRACKING_URI = f"https://dagshub.com/{os.environ['MLFLOW_TRACKING_USERNAME']}/MSML-Fruits-Classification.mlflow"
-    mlflow.set_tracking_uri(TRACKING_URI)
-
 mlflow.set_experiment("Eksperimen_CI_CNN_Fruits")
 
 dataset_path = "./fruits_preprocessing"
